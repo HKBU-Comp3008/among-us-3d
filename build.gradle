@@ -7,7 +7,8 @@ version '2.0.0'
 
 repositories {
     mavenCentral()
-    maven { url 'https://maven.twometer.de/releases/' }
+    mavenLocal()
+//    maven { url 'https://maven.twometer.de/releases/' }
     maven { url 'https://clojars.org/repo/' }
 }
 

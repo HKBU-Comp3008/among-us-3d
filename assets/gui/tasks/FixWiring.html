@@ -94,12 +94,51 @@
         function drawWireBases(arr, basex0, basex1) {
             let y = 100;
             for (var c of arr) {
-                context.strokeStyle = c;
+//                context.strokeStyle = c;
 
-                context.beginPath();
-                context.moveTo(basex0,y);
-                context.lineTo(basex1,y);
-                context.stroke();
+  //              context.beginPath();
+    //            context.moveTo(basex0,y);
+      //          context.lineTo(basex1,y);
+        //        context.stroke();
+
+                context.font = 'italic bold 18px Georgia';
+                context.fillStyle = "#ffffff";
+
+                if (basex0 == 0) {
+
+                    switch (c) {
+                        case '#ff0000':
+                            context.fillText('Glycolysis', basex0+40, y)
+                            break;
+                        case '#606060':
+                            context.fillText('TCA cycle', basex0+40, y)
+                            break;
+                        case '#0000ff':
+                            context.fillText('Oxidative', basex0+40, y)
+                            context.fillText('phosphorylation', basex0+40, y+15)
+                            break;
+                        case '#ffff00':
+                            context.fillText('Glucose', basex0+40, y)
+                            break;
+                     }
+                } else {
+                         switch (c) {
+                        case '#ff0000':
+                            context.fillText('break down glucose', basex0-200, y)
+                            break;
+                        case '#606060':
+                            context.fillText('CO₂ is produced', basex0-160, y)
+                            break;
+                        case '#0000ff':
+                            context.fillText('requires oxygen O₂', basex0-190, y)
+                            context.fillText('in the process', basex0-190, y + 15)
+                            break;
+                        case '#ffff00':
+                            context.fillText("serves as the body's", basex0-220, y)
+                            context.fillText("main source of energy", basex0-220, y+15)
+                            break;
+                        }
+                }
 
                 y += 105;
             }
